@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Batalha</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2e7d32;
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 12px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background-color: #3d9143;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Vencedor: {{ vencedor }}</h1>
+
+        <h2>{{ startup1.nome }} – Pontuação: {{ startup1.pontuacao }}</h2>
+        <h2>{{ startup2.nome }} – Pontuação: {{ startup2.pontuacao }}</h2>
+
+        <a href="/batalhas">🔙 Voltar às Batalhas</a>
+    </div>
+</body>
+</html>

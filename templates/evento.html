@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicar Eventos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+            width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .eventos {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        button {
+            padding: 12px 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 50px auto 0;
+        }
+
+        button:hover {
+            background-color: #3d9143;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Eventos – Batalha entre {{ startup1.nome }} e {{ startup2.nome }}</h1>
+
+        <form method="POST">
+            <div class="eventos">
+                <h3>{{ startup1.nome }}</h3>
+                <label><input type="checkbox" name="pitch_1"> Pitch convincente (+6)</label>
+                <label><input type="checkbox" name="bug_1"> Produto com bugs (-4)</label>
+                <label><input type="checkbox" name="tracao_1"> Boa tração de usuários (+3)</label>
+                <label><input type="checkbox" name="investidor_1"> Investidor irritado (-6)</label>
+                <label><input type="checkbox" name="fake_news_1"> Fake news no pitch (-8)</label>
+            </div>
+
+            <div class="eventos">
+                <h3>{{ startup2.nome }}</h3>
+                <label><input type="checkbox" name="pitch_2"> Pitch convincente (+6)</label>
+                <label><input type="checkbox" name="bug_2"> Produto com bugs (-4)</label>
+                <label><input type="checkbox" name="tracao_2"> Boa tração de usuários (+3)</label>
+                <label><input type="checkbox" name="investidor_2"> Investidor irritado (-6)</label>
+                <label><input type="checkbox" name="fake_news_2"> Fake news no pitch (-8)</label>
+            </div>
+
+            <button type="submit">Finalizar Batalha</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking Final</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+            width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .campea {
+            background-color: #dff0d8;
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .campea h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #2e7d32;
+        }
+
+        .campea p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        a.button:hover {
+            background-color: #3d9143;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Ranking Final das Startups</h1>
+
+        {% if startups %}
+        <div class="campea">
+            <h2>🥇 Campeã: {{ startups[0].nome }}</h2>
+            <p>"{{ startups[0].slogan }}"</p>
+            <p>Ano de fundação: {{ startups[0].ano }}</p>
+            <p>Pontuação final: {{ startups[0].pontuacao }}</p>
+        </div>
+        {% endif %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Pontuação</th>
+                    <th>Pitch</th>
+                    <th>Bug</th>
+                    <th>Tração</th>
+                    <th>Investidor Irritado</th>
+                    <th>Fake News</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in startups %}
+                <tr>
+                    <td>{{ s.nome }}</td>
+                    <td>{{ s.pontuacao }}</td>
+                    <td>{{ s.eventos.pitch }}</td>
+                    <td>{{ s.eventos.bug }}</td>
+                    <td>{{ s.eventos.tracao }}</td>
+                    <td>{{ s.eventos.investidor }}</td>
+                    <td>{{ s.eventos.fake_news }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/reset-total" class="button" style="background-color: #3d9143;">🏠 Voltar ao Início</a>
+
+        <a href="/reset" class="button" style="background-color: #e53935;">🔁 Reiniciar Torneio</a>
+
+    </div>
+</body>
+</html>

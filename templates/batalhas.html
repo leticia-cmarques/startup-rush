@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rodada de Batalhas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+            width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .batalha {
+            background-color: #f1f1f1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .batalha span {
+            font-weight: bold;
+        }
+
+        .batalha a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .batalha a:hover {
+            background-color: #3d9143;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3d9143;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rodada de Batalhas</h1>
+
+        {% for dupla in batalhas %}
+        <div class="batalha">
+            <span>{{ dupla[0].nome }} VS {{ dupla[1].nome }}</span>
+            {% if loop.index0 not in batalhas_concluidas %}
+                <a href="/evento/{{ loop.index0 }}">Administrar batalha</a>
+            {% else %}
+                <span style="color: gray;">✔️ Batalha concluída</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        {% if batalhas|length == batalhas_concluidas|length %}
+        <form action="/nova-rodada" method="POST">
+            <button type="submit">➡️ Iniciar Próxima Rodada</button>
+        </form>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>
