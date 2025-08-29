@@ -1,4 +1,4 @@
-# Startup Rush
+# 🏆Startup Rush🏁
 
 Aplicação em **Flask** que simula um torneio entre startups.  
 É possível cadastrar de **4 a 8 startups**, cada uma com nome, slogan e ano de fundação, e colocá-las para batalhar em rodadas até restar uma campeã.  
@@ -6,7 +6,7 @@ Ao final, é exibido um **ranking** com a pontuação de cada startup.
 
 ---
 
-## 🚀 Tecnologias usadas
+## 💻 Tecnologias usadas
 - Python 3.12
 - Flask
 - HTML5 e CSS3
@@ -38,22 +38,22 @@ Ao final, é exibido um **ranking** com a pontuação de cada startup.
 ## 📂 Estrutura do projeto
 ```bash
 Startup-Rush/
-├── templates/            # páginas HTML
+├── templates/            
 │   ├── batalhas.html     # batalhas entre startups
 │   ├── cadastro.html     # cadastro das startups
 │   ├── evento.html       # eventos positivos/negativos
 │   ├── index.html        # página inicial
 │   ├── ranking.html      # ranking de startups
 │   └── resultado.html    # resultado final
-├── app.py                # aplicação principal em Flask
+├── app.py                # código Python com Flask
 └── README.md             # documentação do projeto
 ```
 
 ---
 
-## 🏆 Funcionalidades
+## ✅ Funcionalidades
 - Cadastro de startups (mínimo 4 e máximo 8).  
 - Simulação de batalhas em rodadas.  
-- Eventos que alteram a pontuação das startups.  
+- Eventos (positivos/negativos) que alteram a pontuação das startups.  
 - Ranking final com exibição da startup campeã.  
 ```
